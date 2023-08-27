@@ -1,0 +1,92 @@
+<html>
+    <title>Rock Scissor Paper</title>
+    <body style="margin-left:25% ; text-align: center; margin-right:25% ; font-size:30px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 800; color:blueviolet; background-color: black;">
+      <p>Rock!!&nbsp;&nbsp; Scissor!! &nbsp;&nbsp;Paper!! </p>
+      <br/>
+      <br/>
+      <script type="text/javascript">
+        function playerRock(){
+            const player='rock'
+            document.getElementById("playerchoice").innerHTML='You chose Rock.'
+        }
+
+        function playerScissor(){
+            const player='scissor'
+            document.getElementById("playerchoice").innerHTML='You chose Scissor.'
+        }
+
+        function playerPaper(){
+            const player='paper'
+            document.getElementById("playerchoice").innerHTML='You chose Paper.'
+        }
+
+let paper=false;
+let scissor=false;
+let rock=false;
+
+let comp=Math.floor(Math.random()*3);
+ 
+function compChoice(){
+if (comp===1) {
+    rock=true;
+    document.getElementById("choice").innerHTML='Computer chose Rock'
+} else if(comp===2){
+    paper=true;
+    document.getElementById("choice").innerHTML='Computer chose Paper'
+}else if(comp===0)
+{
+    scissor=true;
+    document.getElementById("choice").innerHTML='Computer chose Scissor'
+}
+}
+
+function final(){
+if (rock) {
+    if(player==='scissor'){
+        document.write=('Player lost!!')
+    }else if(player==='rock'){
+        document.write=("Tie!!")
+    }else if(player==='paper'){
+        document.write=("Player won!!")
+    }else{
+        document.getElementById("result").innerHTML='Choose between rock, paper, scissor'
+    }
+} else if(paper) {
+    if(player==='scissor'){
+        document.getElementById("result").innerHTML="Player won!!"
+    }else if(player==='rock'){
+        document.getElementById("result").innerHTML="Player lost!!"
+    }else if(player==='paper'){
+        document.getElementById("result").innerHTML="Tie!!"
+    }else{
+        document.getElementById("result").innerHTML='Choose between rock, paper, scissor'
+    }
+}else if(scissor){
+    if(player==='scissor'){
+        document.getElementById("result").innerHTML="Tie!!"
+    }else if(player==='rock'){
+        document.getElementById("result").innerHTML="Player won!!"
+    }else if(player==='paper'){
+        document.getElementById("result").innerHTML="Player lost!!"
+    }else{
+        document.getElementById("result").innerHTML='Choose between rock, paper, scissor'
+    }
+}
+
+}
+        </script>
+      <p style="font-size:20px;">Choose your weapon</p> 
+      <input type="button" onclick="playerRock()" name="Rock" value="Rock" style="background-color: blueviolet; font-size:50px; border-color:antiquewhite;"/>  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="button" onclick="playerPaper()" name="Paper" value="Paper" style="background-color: blueviolet; font-size:50px; border-color:antiquewhite;"/>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="button"  onClick="playerScissor()" name="Scissor" value="Scissor" style="background-color: blueviolet; font-size:50px; border-color:antiquewhite;"/>
+      <p id="playerchoice"></p>
+      <input type="button" onclick="compChoice()" name="Click for computer choice"value="Click for computer choice" style="background-color: blueviolet; font-size:40px; border-color:antiquewhite;"/>  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <p id="choice"></p>
+      <input type="button" onclick="final()" name="Result"value="Result" style="background-color: blueviolet; font-size:40px; border-color:antiquewhite;"/>  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <p id="result"></p>
+    </body>
+    </html>
